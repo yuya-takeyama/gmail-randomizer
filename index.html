@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+  <title>GMail Randomizer</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  jQuery(document).ready(function () {
+    var $ = jQuery;
+
+    var $account = $('#account')
+      , $mail_with_plus = $('#mail_with_plus')
+      , $mail_with_dots = $('#mail_with_dots');
+
+    $account.val(localStorage.getItem('account'));
+
+    var createArray = function (len) {
+      result = [];
+      for (var i = 0; i < len; i++) {
+        result.push(null);
+      }
+      return result;
+    };
+
+    var randStr = (function () {
+      var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+      return function (len) {
+        return (createArray(8)).reduce(function (str, chr) {
+          return str + chars[Math.floor(Math.random() * chars.length)];
+        }, '');
+      };
+    })();
+
+    $('#randomizer').on('submit', function (event) {
+      event.preventDefault();
+
+      localStorage.setItem('account', $account.val());
+
+      var account = $account.val().split('').reduce(function (str, chr) {
+        return str + (createArray(parseInt(Math.random() * 3)).join('.')) + chr;
+      }, '');
+
+      $mail_with_plus.text($account.val() + '+' + randStr(8) + '@gmail.com');
+      $mail_with_dots.text(account + '@gmail.com');
+    });
+  });
+  </script>
+  <style type="text/css">
+  #subject {
+    font-size: 54px;
+  }
+
+  .mail_address {
+    font-size: 48px;
+    margin: 0.3em 0;
+  }
+  </style>
+</head>
+<body>
+  <h1 id="subject">GMail Randomizer</h1>
+  <form id="randomizer">
+  <input type="text" id="account" size="40" /> @gmail.com input
+  <input type="submit" value="Randomize" />
+  </form>
+  <div id="mail_with_plus" class="mail_address"></div>
+  <div id="mail_with_dots" class="mail_address"></div>
+</body>
+</html>
