@@ -38,7 +38,7 @@
 
       var account = $account.val().split('').reduce(function (str, chr) {
         return str + (createArray(parseInt(Math.random() * 3)).join('.')) + chr;
-      }, '');
+      });
 
       $mail_with_plus.text($account.val() + '+' + randStr(8) + '@gmail.com');
       $mail_with_dots.text(account + '@gmail.com');
