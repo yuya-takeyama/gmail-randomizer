@@ -5,9 +5,11 @@ jQuery(document).ready(function () {
   var $ = jQuery;
 
   var $account = $('#account')
+    , $result         = $('#result')
     , $mail_with_plus = $('#mail_with_plus')
     , $mail_with_dots = $('#mail_with_dots');
 
+  $result.hide();
   $account.val(localStorage.getItem('account'));
 
   var createArray = function (len) {
@@ -29,6 +31,7 @@ jQuery(document).ready(function () {
 
   $('#randomizer').on('submit', function (event) {
     event.preventDefault();
+    $result.show();
 
     localStorage.setItem('account', $account.val());
 
