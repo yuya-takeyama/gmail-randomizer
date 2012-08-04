@@ -35,15 +35,20 @@
 
     <div class="container">
 
+      <div class="page-header">
+        <h1>Input your Gmail address</h1>
+      </div>
+
       <!-- Example row of columns -->
       <div class="row">
         <div class="span12">
-          <h2>Input your Gmail address</h2>
-          <form id="randomizer">
-            <input type="text" id="account" size="40" /> @gmail.com
-            <input type="submit" value="Randomize" class="btn btn-large" />
+          <form id="randomizer" class="well form-inline">
+            <div class="input-append" id="gmail-field">
+              <input type="text" id="account" class="input-medium span4"><span class="add-on">@gmail.com</span>
+            </div>
+            <input type="submit" value="Randomize" class="btn btn-large span3">
           </form>
-          <p>Your account will not be sent to any server.</p>
+          <p class="alert alert-info">Your account will not be sent to any server.</p>
           <div id="mail_with_plus" class="mail_address"></div>
           <div id="mail_with_dots" class="mail_address"></div>
 
