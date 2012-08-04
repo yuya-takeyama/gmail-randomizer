@@ -4,25 +4,25 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="ja"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Gmail Randomizer</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+  <title>Gmail Randomizer</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-	<meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width">
 
-	<link rel="stylesheet/less" href="less/style.less">
-	<script src="js/libs/less-1.3.0.min.js"></script>
-	
-	<!-- Use SimpLESS (Win/Linux/Mac) or LESS.app (Mac) to compile your .less files
-	to style.css, and replace the 2 lines above by this one:
+  <link rel="stylesheet/less" href="less/style.less">
+  <script src="js/libs/less-1.3.0.min.js"></script>
 
-	<link rel="stylesheet" href="less/style.css">
-	 -->
+  <!-- Use SimpLESS (Win/Linux/Mac) or LESS.app (Mac) to compile your .less files
+  to style.css, and replace the 2 lines above by this one:
 
-	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+  <link rel="stylesheet" href="less/style.css">
+   -->
+
+  <script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -84,10 +84,12 @@
 <!-- end scripts-->
 
 <script>
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
+  if (document.location.host === 'yuya-takeyama.github.com') {
+    var _gaq=[['_setAccount','UA-12392004-5'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  }
 </script>
 
 </body>
