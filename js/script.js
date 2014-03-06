@@ -36,7 +36,7 @@ jQuery(document).ready(function () {
     localStorage.setItem('account', $account.val());
 
     var account = $account.val().split('').reduce(function (str, chr) {
-      return str + (createArray(parseInt(Math.random() * 3)).join('.')) + chr;
+      return str + (createArray(parseInt(Math.random() * 5)).join('.')) + chr;
     });
 
     $mail_with_plus.text($account.val() + '+' + randStr(8) + '@gmail.com');
